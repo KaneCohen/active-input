@@ -1,6 +1,9 @@
-// Active Input - enable disable button based on container input
-// version 0.1.0
-// Kane Cohen [KaneCohen@gmail.com] | https://github.com/KaneCohen
+/**
+ * Active Input - enable disable input action based on the input
+ * version 0.1.0
+ * Kane Cohen [KaneCohen@gmail.com] | https://github.com/KaneCohen
+ * @preserve
+ */
 (function(factory) {
 	if (typeof define === 'function' && define.amd) {
 		define(['jquery'], factory);
