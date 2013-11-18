@@ -1,0 +1,23 @@
+{
+	"name": "active-input",
+	"version": "0.1.0",
+	"description": "Add a live feedback to your input + button element",
+	"keywords": ["input", "button", "active", "disabled", "live", "jquery", "plugin"],
+	"author": {
+		"name": "Kane Cohen",
+		"email": "kanecohen@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/KaneCohen/active-input.git"
+	}
+	"licenses": [
+		{
+			"type": "BSD",
+			"url": "https://github.com/KaneCohen/active-input/blob/master/LICENSE"
+		}
+	],
+	"dependencies": {
+		"jquery": ">=1.9.0"
+	}
+}
