@@ -54,7 +54,7 @@
 							minChars: 1
 						}],
 			*/
-			form:      null,
+			form:      false,
 			classes: {
 				negative: 'negative'
 			},
