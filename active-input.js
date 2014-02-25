@@ -95,7 +95,7 @@
 					}
 				});
 			} else if (this.o.input) {
-				this.o.input.each(function(k,v) {
+				this.o.input.each(function() {
 					self.v.input.push({
 						input: $(this),
 						counter: self.o.counter,
@@ -147,20 +147,22 @@
 
 				if (v.form) {
 					v.input.on('input.activeInput keydown.activeInput change.activeInput reset.activeInput', function(e) {
-						if (self.validate(v.input)) {
-							self.v.button.prop('disabled', false);
-						} else {
-							self.v.button.prop('disabled', true);
-						}
-						self.trigger('stop', self);
+						setTimeout(function() {
+							if (self.validate(v.input)) {
+								self.v.button.prop('disabled', false);
+							} else {
+								self.v.button.prop('disabled', true);
+							}
+							self.trigger('stop', self, e);
+						}, 1);
 					});
-					v.input.on('submit.activeInput', function(e) {
+					v.input.on('submit.activeInput', function() {
 						self.v.button.prop('disabled', true);
 						self.v.initData = $(this).serialize();
 					});
 				} else {
 					var prevVal = v.input.val();
-					v.input.on('input.activeInput change.activeInput', function(e) {
+					v.input.on('input.activeInput change.activeInput', function() {
 						var val = $.trim(v.input.val()).replace(/[\s]/gi, '');
 						if (v.stripHtml) {
 							val = val.replace(/(<([^>]+)<)/gi, '');
@@ -195,15 +197,15 @@
 							prevVal = val;
 						}
 					});
-					v.input.on('focusout.activeInput', function() {
-						self.trigger('stop', self);
+					v.input.on('focusout.activeInput', function(e) {
+						self.trigger('stop', self, e);
 					});
 				}
 
 			});
 
 			this.v.button.on('click.activeInput', function(e) {
-				self.trigger('click', self);
+				self.trigger('click', self, e);
 			});
 		},
 
@@ -287,7 +289,7 @@
 
 		initCallbacks: function() {
 			var self = this;
-			$.each(this.o.callbacks, function(k, v) {
+			$.each(this.o.callbacks, function(k) {
 				self.o.callbacks[k] = function() {
 					var args = Array.prototype.slice.call(arguments);
 					return self.o.element.triggerHandler(k, args);
