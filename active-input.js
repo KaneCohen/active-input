@@ -10,21 +10,20 @@
   var hasModule = (typeof module !== 'undefined' && module.exports);
 
   if (window.jQuery) {
-    var $ = window.jQuery;
-    $.fn.activeInput = function(options) {
+    jQuery.fn.activeInput = function(options) {
       var vals = [], args = arguments, ai = null;
-      var o = $.extend(true, {}, options);
+      var o = jQuery.extend(true, {}, options);
 
-      o.elements = $(this.selector);
+      o.elements = jQuery(this.selector);
       o.selector = this.selector;
 
       this.each(function() {
-        o.element = $(this);
-        ai = $(this).data('activeInput');
+        o.element = jQuery(this);
+        ai = util.data('activeInput');
         if (ai) {
           ai.trigger.apply(ai, args);
           vals.push(ai.o.element);
-        } else if ($.type(options) != 'string') {
+        } else if (jQuery.type(options) != 'string') {
           ai = new ActiveInput(o);
         }
       });
@@ -269,6 +268,8 @@
   ActiveInput.prototype = {
     init: function() {
       var self = this, o = this.o, input, counter;
+
+      util.data('activeInput', this);
       if (typeof o.element === 'string') {
         o.element = document.querySelector(o.element);
       }
