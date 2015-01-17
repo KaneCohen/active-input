@@ -8,8 +8,8 @@
   "description": "Live feedback and character counter forfields and forms.",
   "keywords": ["field", "input", "form", "counter", "character-counter"],
   "repository": {
-  "type": "git",
-  "url": "git://github.com/KaneCohen/active-input.git"
+    "type": "git",
+    "url": "git://github.com/KaneCohen/active-input.git"
   },
   "licenses": [
     {
