@@ -1,20 +1,26 @@
 {
   "name": "active-input",
-  "version": "0.2.0",
-  "description": "Add a live feedback to your input + button element",
-  "keywords": ["input", "button", "active", "disabled", "live", "jquery", "plugin"],
+  "version": "0.3.0",
   "author": {
     "name": "Kane Cohen",
     "email": "kanecohen@gmail.com"
   },
+  "description": "Live feedback and character counter forfields and forms.",
+  "keywords": ["field", "input", "form", "counter", "character-counter"],
   "repository": {
-    "type": "git",
-    "url": "https://github.com/KaneCohen/active-input.git"
+  "type": "git",
+  "url": "git://github.com/KaneCohen/active-input.git"
   },
   "licenses": [
     {
       "type": "BSD",
-      "url": "https://github.com/KaneCohen/active-input/blob/master/LICENSE"
+      "url": "https://github.com/KaneCohen/active-input/master/LICENSE"
     }
-  ]
+  ],
+  "devDependencies": {
+    "gulp": "~3.8.10",
+    "gulp-uglifyjs": "~0.5.0",
+    "gulp-nodeunit-runner": "~0.2.2",
+    "gulp-jshint": "~1.9.0"
+  }
 }
