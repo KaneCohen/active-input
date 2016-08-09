@@ -1,8 +1,0 @@
-{
-  "name": "active-input",
-  "version": "0.3.1",
-  "main": "lib/active-input.js",
-  "ignore": [],
-  "keywords": ["field", "input", "form", "counter", "character-counter"],
-  "dependencies": {}
-}
